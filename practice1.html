@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         background: linear-gradient(45deg, rgb(48, 4, 87), #48075b);
+
+      }
+
+      .hello {
+         /* border: 1px solid black; */
+         width: 200px;
+         height: 200px;
+         /* box-shadow: 0 0 10px blue; */
+         background: conic-gradient(cyan, purple, rgb(140, 232, 232), purple, cyan);
+         background: radial-gradient();
+         border-radius: 50%;
+         filter: blur(7px);
+         
+         position: absolute;
+         top: 7px;
+
+
+      }
+
+      @keyframes rotate {
+         0% {
+            transform: rotate(0deg);
+         }
+         100% {
+            transform: rotate(360deg);
+         }
+      }
+      .hello2 {
+         /* border: 1px solid black; */
+         width: 170px;
+         height: 170px;
+         position: absolute;
+         border-radius: 50%;
+         background-color: rgb(48, 4, 87);
+         filter: blur(7px);
+
+
+      }
+
+      .hola {
+         /* border: 1px solid black; */
+         width: 200px;
+         height: 200px;
+         position: relative;
+         animation: rotate 2s linear infinite;
+      }
+      .circle{
+         /* border: 1px solid black; */
+         width: 100px;
+         height: 100px;
+         position: absolute;
+         border-radius: 50%;
+         background-color: rgb(65, 18, 105);
+         animation: scale 700ms linear infinite alternate;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         font-size: 40px;
+         
+      }
+      @keyframes scale {
+         0% {
+            transform: scaleX() scaleY();
+         }
+         100% {
+            transform: scaleX(1.1) scaleY(1.1);
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <div class="hola">
+      <div class="hello"></div>
+   </div>
+
+   <div class="hello2"></div>
+   <div class="circle">🎙️</div>
+
+</body>
+
+</html>
