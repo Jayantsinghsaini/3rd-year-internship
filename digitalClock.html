@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s ease-in-out;
+            
+
+        }
+
+        .container {
+            border: 5px solid;
+            border-radius: 15px;
+            height: 190px;
+            width: 500px;
+            font-family: "Orbitron", sans-serif;
+            /* color: white; */
+            position: relative;
+        }
+
+        .ui {
+            position: absolute;
+            display: flex;
+        }
+
+        .day {
+            /* border: 1px solid; */
+            height: 30%;
+            width: 50%;
+            left: 0;
+            top: 0;
+            font-size: 37px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .date {
+            /* border: 1px solid; */
+            height: 30%;
+            width: 50%;
+            right: 0;
+            top: 0;
+            font-size: 37px;
+            align-items: center;
+            justify-content: flex-end;
+
+        }
+
+        .hours {
+            /* border: 1px solid; */
+            height: 70%;
+            width: 70%;
+            left: 0;
+            bottom: 0;
+            font-size: 115px;
+            align-items: flex-end;
+            justify-content: flex-start;
+        }
+
+        .second {
+            /* border: 1px solid; */
+            height: 50%;
+            width: 30%;
+            bottom: 0;
+            right: 0;
+            font-size: 50px;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .toggle{
+            background-color: black;
+            color: rgb(201, 201, 201);
+            
+        }
+        #darkModeID {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: "Poppins", sans-serif;
+            font-size: 16px;
+            transition: 0.5s ease-in-out;
+            
+        }
+        .btnToggle{
+            background-color: rgb(28, 122, 223);border: transparent;
+            
+        }
+
+    </style>
+</head>
+
+<body>
+    <input type="button" value="darkMode" id="darkModeID">
+    <div class="container">
+        <div class="day ui"></div>
+        <div class="date ui"></div>
+        <div class="hours ui"></div>
+        <div class="second ui"></div>
+    </div>
+    <script>
+        let darkMode = document.querySelector("#darkModeID");
+        darkMode.addEventListener("click",()=>{
+            document.body.classList.toggle("toggle");
+            darkMode.classList.toggle("btnToggle");
+            
+            
+        })
+
+        setInterval(() => {
+            let time = new Date();
+            let a = time.getSeconds();
+
+            let x = time.getHours();;
+            let y = time.getMinutes();;
+
+            let c = time.getDate();;
+            let d = time.getMonth() + 1;;
+            let e = time.getDay();
+            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let dayName = days[e].toUpperCase();
+            if (a < 10) {
+                a = "0" + a;
+
+            }
+            if (x < 10) {
+                x = "0" + x;
+            }
+            if (y < 10) {
+                y = "0" + y;
+            }
+            if (c < 10) {
+                c = "0" + c;
+            }
+            if (d < 10) {
+                d = "0" + d;
+            }
+            let b = x + ":" + y;
+            document.querySelector(".second").innerHTML = `${a}`;
+            document.querySelector(".hours").innerHTML = `${b}`;
+            document.querySelector(".date").innerHTML = `${d}-${c}`;
+            document.querySelector(".day").innerHTML = `${dayName}`;
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
