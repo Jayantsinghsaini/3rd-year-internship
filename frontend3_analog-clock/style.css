@@ -1,0 +1,47 @@
+ * {
+     margin: 0;
+     padding: 0;
+ }
+
+ .super {
+     background: linear-gradient(45deg, pink, rgb(0, 162, 255));
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+ }
+
+ .container {
+     height: 400px;
+     width: 400px;
+     position: absolute;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .container1 {
+     border: 3px solid;
+     border-radius: 50%;
+ }
+
+ .dot {
+     background: linear-gradient(black 0% 60%, transparent 61%);
+     border-radius: 50%;
+ }
+
+ .dot1 {
+     height: 380px;
+     width: 6px;
+ }
+
+ .dot2 {
+     height: 300px;
+     width: 10px;
+ }
+
+ .dot3 {
+     height: 200px;
+     width: 14px;
+ }
