@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+.title {
+  text-align: center;
+  margin: 60px 0 20px;
+  font-size: 3rem;
+}
+
+.gallery {
+  padding-bottom: 100px;
+}
+
+.image-container {
+  max-width: 800px;
+  margin: 80px auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.zoom-img {
+  width: 100%;
+  transform: scale(0.8) rotate(5deg);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.zoom-img.show {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
