@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100dvh;
+
+    }
+
+    input {
+        height: 100px;
+        width: 200px;
+        font-size: x-large;
+        font-family: sans-serif;
+        font-weight: bolder;
+        color: lightgray;
+        background: linear-gradient(135deg, darkblue, purple);
+        border: 2px solid lightgray;
+        border-radius: 1rem;
+        transition: 100ms;
+
+    }
+
+    input:hover {
+        color: white;
+        border: 1px solid white;
+        cursor: pointer;
+
+
+    }
+    @media screen and (max-width: 600px) {
+        input:hover {
+            color: lightgray;
+            border: 2px solid lightgray;
+    }
+    }
+
+
+    input:active {
+        transform: scale(0.95);
+    }
+</style>
+
+<body>
+    <input type="button" value="Generate Data" onclick="func()">
+    <script>
+        function func() {
+            fetch('http://localhost:3000/about', { method: 'POST' })
+                .then(() => {
+                })
+                .catch(err => { console.log(err) })
+        }
+    </script>
+</body>
+
+</html>
